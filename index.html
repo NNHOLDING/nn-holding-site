@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NN HOLDING SOLUTIONS</title>
 
-  <!-- Favicon personalizado -->
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="https://github.com/NNHOLDING/OneSIT/raw/refs/heads/main/jpeg%20(10)%20(1).ico">
 
-  <!-- Google Fonts -->
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
   <style>
@@ -36,7 +34,6 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--light-bg);
       color: var(--text-dark);
-      transition: background-color var(--transition), color var(--transition);
     }
 
     .container {
@@ -46,13 +43,12 @@
       padding: 1rem 0;
     }
 
-    /* Banner superior */
     .banner {
       background-color: var(--dark-bg);
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 0.5rem 0;
+      padding: 1rem 0;
     }
 
     .header-content {
@@ -85,36 +81,40 @@
       color: var(--secondary);
     }
 
-    .hero {
-      background: linear-gradient(to right, var(--primary), var(--secondary));
-      color: var(--text-light);
+    .hero-strip {
+      background: #003366;
+      color: white;
       text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
     }
 
     .btn {
       background-color: var(--text-light);
       color: var(--primary);
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
+      padding: 0.3rem 0.8rem;
+      margin-left: 1rem;
+      border-radius: 4px;
       text-decoration: none;
-      font-weight: 400;
-      transition: background-color var(--transition), transform var(--transition);
+      font-weight: 500;
+      font-size: 0.8rem;
     }
 
-    .btn:hover {
-      background-color: #e0e0e0;
-      transform: scale(1.05);
+    .animated-banner {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 1rem 0;
+      min-height: 2rem;
+    }
+
+    #animated-text {
+      display: inline-block;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
     }
 
     .section {
@@ -206,10 +206,6 @@
       .cards {
         flex-direction: column;
       }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
     }
   </style>
 </head>
@@ -217,11 +213,14 @@
   <header class="banner">
     <div class="container header-content">
       <img src="https://github.com/NNHOLDING/OneSIT/blob/main/logo2.png?raw=true" alt="Logo NN Holding Solutions" class="logo" />
-      <div class="hero-strip" style="background: #003366; color: white; text-align: center; padding: 0.5rem; font-size: 0.9rem; border-radius: 5px; margin-bottom: 0.5rem;">
-  <span>Soluciones Inteligentes para tu Negocio — Impulsamos el crecimiento de emprendedores y pequeñas empresas con herramientas tecnológicas y asesoría personalizada.</span>
-  <a href="#contacto" class="btn" style="background-color: white; color: #003366; padding: 0.3rem 0.8rem; margin-left: 1rem; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 0.8rem;">Contáctanos</a>
-</div>
-<nav>
+      <div class="animated-banner">
+        <span id="animated-text">Ever Be Better</span>
+      </div>
+      <div class="hero-strip">
+        <span>Soluciones Inteligentes para tu Negocio — Impulsamos el crecimiento de emprendedores y pequeñas empresas con herramientas tecnológicas y asesoría personalizada.</span>
+        <a href="#contacto" class="btn">Contáctanos</a>
+      </div>
+      <nav>
         <ul>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
@@ -230,8 +229,6 @@
       </nav>
     </div>
   </header>
-
-  
 
   <section id="servicios" class="section">
     <div class="container">
@@ -274,4 +271,12 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 NN Holding Solutions. Todos los derechos reservados.</p
+    <p>&copy; 2025 NN Holding Solutions. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const phrases = ["Ever Be Better", "Smart Intelligence Tools"];
+    let index = 0;
+    const el = document.getElementById("animated-text");
+
+    function updateText()
