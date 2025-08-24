@@ -125,6 +125,39 @@
       background-color: var(--card-bg);
     }
 
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      flex: 1;
+      min-width: 250px;
+      transition: transform var(--transition);
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .card img {
+      width: 100px;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
     ol {
       padding-left: 1.5rem;
       font-size: 1.1rem;
@@ -187,6 +220,10 @@
         gap: 1rem;
         margin-top: 1rem;
       }
+
+      .cards {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -203,6 +240,7 @@
       </div>
       <nav>
         <ul>
+          <li><a href="#home">Home</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#contacto">Contacto</a></li>
@@ -211,58 +249,26 @@
     </div>
   </header>
 
-  <section id="servicios" class="section">
+  <!-- 🏠 Sección Home -->
+  <section id="home" class="section light">
     <div class="container">
-      <h2><i class="fas fa-briefcase"></i> Servicios</h2>
-      <ol>
-        <li><strong>Automatización de procesos:</strong> desarrollamos soluciones digitales para optimizar tus procesos internos.</li>
-        <li><strong>Registro de marcas:</strong> asesoría legal y técnica para emprendimientos que buscan proteger su identidad comercial.</li>
-        <li><strong>Desarrollo web personalizado:</strong> diseño de sitios modernos, responsivos y enfocados en conversión.</li>
-        <li><strong>Consultoría tecnológica:</strong> acompañamiento estratégico para implementar herramientas digitales efectivas.</li>
-        <li><strong>Capacitación:</strong> formación en herramientas tecnológicas y gestión empresarial.</li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="nosotros" class="section light">
-    <div class="container">
-      <h2><i class="fas fa-user-friends"></i> ¿Quiénes somos?</h2>
-      <p>Somos una empresa costarricense comprometida con el desarrollo de soluciones integrales para emprendedores y pequeñas empresas. Nuestra misión es brindar herramientas que impulsen la eficiencia, innovación y sostenibilidad de nuestros clientes.</p>
-    </div>
-  </section>
-
-  <section id="contacto" class="section">
-    <div class="container">
-      <h2><i class="fas fa-comments"></i> Contacto</h2>
-      <p>¿Listo para llevar tu negocio al siguiente nivel? Escríbenos:</p>
-      <form>
-        <input type="text" placeholder="Nombre" name="nombre" required />
-        <input type="email" placeholder="Correo electrónico" name="email" required />
-        <textarea placeholder="Mensaje" name="mensaje" required></textarea>
-        <button type="submit"><i class="fas fa-paper-plane"></i> Enviar</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 NN Holding Solutions. Todos los derechos reservados.</p>
-  </footer>
-
-  <script>
-    const phrases = ["Ever Be Better", "Smart Intelligence Tools"];
-    let index = 0;
-    const el = document.getElementById("animated-text");
-
-    function updateText() {
-      el.style.opacity = 0;
-      setTimeout(() => {
-        el.textContent = phrases[index];
-        el.style.opacity = 1;
-        index = (index + 1) % phrases.length;
-      }, 1000);
-    }
-
-    setInterval(updateText, 4000);
-  </script>
-</body>
-</html>
+      <h2><i class="fas fa-home"></i> Soluciones Destacadas</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="https://github.com/NNHOLDING/nn-holding-site/blob/main/sitfavicon.ico?raw=true" alt="VBA Automatización">
+          <h3><i class="fas fa-file-excel"></i> Automatización con VBA</h3>
+          <p>Soluciones VBA para automatizar reportes de horas extras, mejorando la eficiencia en el control de tiempos laborales.</p>
+        </div>
+        <div class="card">
+          <img src="https://github.com/NNHOLDING/nn-holding-site/blob/main/descarga2025%20(2).png?raw=true" alt="App Web Control">
+          <h3><i class="fas fa-laptop-code"></i> Desarrollo de Apps Web</h3>
+          <p>Aplicaciones web personalizadas para optimizar procesos y controlar dispositivos de forma remota y segura.</p>
+        </div>
+        <div class="card">
+          <img src="https://github.com/NNHOLDING/nn-holding-site/blob/main/diagrama-de-flujo-tipo-vertical.webp?raw=true" alt="Flujo de operaciones">
+          <h3><i class="fas fa-project-diagram"></i> Análisis de Flujo</h3>
+          <p>Estudio y visualización de flujos operativos para detectar cuellos de botella y mejorar la productividad.</p>
+        </div>
+        <div class="card">
+          <img src="https://github.com/NNHOLDING/nn-holding-site/blob/main/document-management-system-dms-software-260nw-2282100541.webp?raw=true" alt="Registro de marcas">
+         
