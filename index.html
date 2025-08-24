@@ -125,30 +125,15 @@
       background-color: var(--card-bg);
     }
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
+    ol {
+      padding-left: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      list-style-position: inside;
     }
 
-    .card {
-      background-color: var(--card-bg);
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      flex: 1;
-      min-width: 100px;
-      transition: transform var(--transition);
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
+    ol li {
       margin-bottom: 1rem;
-      color: var(--primary);
     }
 
     form {
@@ -202,10 +187,6 @@
         gap: 1rem;
         margin-top: 1rem;
       }
-
-      .cards {
-        flex-direction: column;
-      }
     }
   </style>
 </head>
@@ -231,25 +212,15 @@
   </header>
 
   <section id="servicios" class="section">
-  <div class="container">
-    <h2><i class="fas fa-briefcase"></i> Servicios</h2>
-    <ol>
-      <li>Automatización de procesos: desarrollamos soluciones digitales para optimizar tus procesos internos.</li>
-      <li>Registro de marcas: asesoría legal y técnica para emprendimientos que buscan proteger su identidad comercial.</li>
-      <li>Desarrollo web personalizado: diseño de sitios modernos, responsivos y enfocados en conversión.</li>
-      <li>Consultoría tecnológica: acompañamiento estratégico para implementar herramientas digitales efectivas.</li>
-    </ol>
-  </div>
-</section>
-        <div class="card">
-          <h3><i class="fas fa-lightbulb"></i> Consultoría</h3>
-          <p>Te acompañamos en la toma de decisiones estratégicas para tu negocio.</p>
-        </div>
-        <div class="card">
-          <h3><i class="fas fa-chalkboard-teacher"></i> Capacitación</h3>
-          <p>Ofrecemos formación en herramientas tecnológicas y gestión empresarial.</p>
-        </div>
-      </div>
+    <div class="container">
+      <h2><i class="fas fa-briefcase"></i> Servicios</h2>
+      <ol>
+        <li><strong>Automatización de procesos:</strong> desarrollamos soluciones digitales para optimizar tus procesos internos.</li>
+        <li><strong>Registro de marcas:</strong> asesoría legal y técnica para emprendimientos que buscan proteger su identidad comercial.</li>
+        <li><strong>Desarrollo web personalizado:</strong> diseño de sitios modernos, responsivos y enfocados en conversión.</li>
+        <li><strong>Consultoría tecnológica:</strong> acompañamiento estratégico para implementar herramientas digitales efectivas.</li>
+        <li><strong>Capacitación:</strong> formación en herramientas tecnológicas y gestión empresarial.</li>
+      </ol>
     </div>
   </section>
 
@@ -282,4 +253,16 @@
     let index = 0;
     const el = document.getElementById("animated-text");
 
-    function updateText()
+    function updateText() {
+      el.style.opacity = 0;
+      setTimeout(() => {
+        el.textContent = phrases[index];
+        el.style.opacity = 1;
+        index = (index + 1) % phrases.length;
+      }, 1000);
+    }
+
+    setInterval(updateText, 4000);
+  </script>
+</body>
+</html>
